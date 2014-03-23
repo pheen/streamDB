@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+
+    <channel>
+        <title>Snowboarder Magazine</title>
+        <atom:link href="http://www.snowboardermag.com/feed/" rel="self" type="application/rss+xml" />
+        <link>http://www.snowboardermag.com</link>
+        <description>Snowboarding Gear, Riders &#38; Features, Snowboard Pictures and Videos</description>
+        <lastBuildDate>Sun, 02 Feb 2014 02:18:42 +0000</lastBuildDate>
+        <language>en-US</language>
+        <sy:updatePeriod>hourly</sy:updatePeriod>
+        <sy:updateFrequency>1</sy:updateFrequency>
+        <generator>http://wordpress.org/?v=3.6</generator>
+
+        <item>
+            <title>Iron Workers: Vilnius Lithuania X Technine</title>
+            <link>http://www.snowboardermag.com/videos/iron-workers-vilnius-lithuania-x-technine/</link>
+            <comments>http://www.snowboardermag.com/videos/iron-workers-vilnius-lithuania-x-technine/#comments</comments>
+            <pubDate>Sat, 01 Feb 2014 06:30:32 +0000</pubDate>
+            <dc:creator>SNOWBOARDER</dc:creator>
+            <category>
+                <![CDATA[Exclusives]]>
+            </category>
+            <category>
+                <![CDATA[Featured]]>
+            </category>
+            <category>
+                <![CDATA[Videos]]>
+            </category>
+            <category>
+                <![CDATA[Andrew Brewer]]>
+            </category>
+            <category>
+                <![CDATA[Chris Grenier]]>
+            </category>
+            <category>
+                <![CDATA[Dylan Thompson]]>
+            </category>
+            <category>
+                <![CDATA[Lithuania]]>
+            </category>
+            <category>
+                <![CDATA[Nick Poohachoff]]>
+            </category>
+            <category>
+                <![CDATA[Technine]]>
+            </category>
+            <category>
+                <![CDATA[Zak Hale]]>
+            </category>
+
+            <guid isPermaLink="false">http://www.snowboardermag.com/?p=96515</guid>
+            <description>
+                <![CDATA[<p>Technine team members Dylan Thompson, Andrew Brewer and Nick Poohachoff met up with homies Chris Grenier, and Zak Hale.</p><p>The post <a href="http://www.snowboardermag.com/videos/iron-workers-vilnius-lithuania-x-technine/">Iron Workers: Vilnius Lithuania X Technine</a> appeared first on <a href="http://www.snowboardermag.com">Snowboarder Magazine</a>.</p>]]>
+            </description>
+            <content:encoded>
+                <![CDATA[<p>Last winter <a href="http://technine.com/">Technine</a> team members Dylan Thompson, Andrew Brewer and Nick Poohachoff met up with homies Chris Grenier, and Zak Hale and traveled to Lithuania. This country in Eastern Europe is known for its local beer and its country&#8217;s basketball team, but in addition to these notable national exports, the streets are lined with spots ready to be filmed. What may have been lost in the translation of the Lithuanian language was made up for in transition as the crew took advantage of the variety of street spots in Vilnius, Lithuania. Enjoy this video from their trip filmed by Cole Taylor and edited by Cole Taylor and Pat Raichur.</p>
+<p>The post <a href="http://www.snowboardermag.com/videos/iron-workers-vilnius-lithuania-x-technine/">Iron Workers: Vilnius Lithuania X Technine</a> appeared first on <a href="http://www.snowboardermag.com">Snowboarder Magazine</a>.</p>]]>
+            </content:encoded>
+            <wfw:commentRss>http://www.snowboardermag.com/videos/iron-workers-vilnius-lithuania-x-technine/feed/</wfw:commentRss>
+            <slash:comments>0</slash:comments>
+            <enclosure url="http://cdn.snowboardermag.com/files/2014/01/Lithuania-Technine-Jan14-fi1-150x150.jpg" length="9605" type="image/jpg" />
+        </item>
+
+    </channel>
+</rss>

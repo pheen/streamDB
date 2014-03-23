@@ -1,0 +1,77 @@
+// Place all the styles related to the streams controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: 'Calibri';
+}
+
+ul {
+  position: absolute;
+  top: 7%;
+  left: 7%;
+  width: 500px;
+}
+
+li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  height: 135px;
+  background-size: 100% !important;
+  opacity: .6;
+  transition: opacity .25s;
+  
+
+  &:first-of-type {
+    width: 100%;
+    height: 250px;
+  }
+
+  &.new {
+    opacity: .9;
+  }
+
+  &:hover {
+    opacity: 1;
+
+    .details {
+      opacity: 1;
+    }
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .details {
+    position: fixed;
+    left: 650px;
+    top: 100px;
+    width: 50%;
+    opacity: 0;
+    color: #fff;
+    pointer-events: none;
+    transition: all .25s;
+    text-shadow: 0 1px #000;
+
+    .title {
+      font: 25px 'Calibri';
+    }
+
+    .play_count {
+      display: inline-block;;
+      height: 30px;
+      width: 75px;
+      margin-top: 10px;
+      padding-left: 45px;
+      background: url('icon_eye.png') no-repeat left center;
+      background-size: 32px;
+      line-height: 30px;
+      font-size: 24px;
+    }
+  }
+
+}

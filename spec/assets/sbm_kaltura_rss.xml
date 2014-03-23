@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+
+    <channel>
+        <title>Snowboarder Magazine</title>
+        <atom:link href="http://www.snowboardermag.com/feed/" rel="self" type="application/rss+xml" />
+        <link>http://www.snowboardermag.com</link>
+        <description>Snowboarding Gear, Riders &#38; Features, Snowboard Pictures and Videos</description>
+        <lastBuildDate>Sun, 02 Feb 2014 02:18:42 +0000</lastBuildDate>
+        <language>en-US</language>
+        <sy:updatePeriod>hourly</sy:updatePeriod>
+        <sy:updateFrequency>1</sy:updateFrequency>
+        <generator>http://wordpress.org/?v=3.6</generator>
+
+        <item>
+            <title>Vans Presents Introspect: Iouri Podladtchikov</title>
+            <link>http://www.snowboardermag.com/videos/vans-presents-introspect-iouri-podladtchikov/</link>
+            <comments>http://www.snowboardermag.com/videos/vans-presents-introspect-iouri-podladtchikov/#comments</comments>
+            <pubDate>Fri, 31 Jan 2014 16:00:00 +0000</pubDate>
+            <dc:creator>SNOWBOARDER</dc:creator>
+            <category>
+                <![CDATA[Exclusives]]>
+            </category>
+            <category>
+                <![CDATA[Featured]]>
+            </category>
+            <category>
+                <![CDATA[Videos]]>
+            </category>
+            <category>
+                <![CDATA[Iouri Podladtchikov]]>
+            </category>
+            <category>
+                <![CDATA[Vans]]>
+            </category>
+
+            <guid isPermaLink="false">http://www.snowboardermag.com/?p=96507</guid>
+            <description>
+                <![CDATA[<p>Something that people don't know about contest snowboarding...</p><p>The post <a href="http://www.snowboardermag.com/videos/vans-presents-introspect-iouri-podladtchikov/">Vans Presents Introspect: Iouri Podladtchikov</a> appeared first on <a href="http://www.snowboardermag.com">Snowboarder Magazine</a>.</p>]]>
+            </description>
+            <content:encoded>
+                <![CDATA[<p>&#8220;Something about contest snowboarding that people probably don&#8217;t understand&#8211;the fact that that one run, that one day, is going to be watched so many times after.&#8221; &#8211; Iouri  Podladtchikov</p>
+<p>Get to know one of the most talented halfpipe riders in snowboarding, Iouri Podladchikov in Vans <em>Introspect</em>.</p>
+<p><strong>More Vans <em>Introspect</em>:</strong><br />
+<a href="http://cdn.snowboardermag.com/files/2013/12/Vans-introspect-ZacMarben-Dec13-fi.jpg" data-ls-seen="1">Introspect: Zac Marben</a><br />
+<a href="http://www.snowboardermag.com/videos/vans-presents-introspect-jamie-lynn/" data-ls-seen="1">Introspect: Jamie Lynn</a><br />
+<a href="http://www.snowboardermag.com/videos/vans-presents-introspect-hana-beaman/" data-ls-seen="1">Introspect: Hana Beaman</a><br />
+<a href="http://www.snowboardermag.com/videos/vans-presents-introspect-darrell-mathes/" data-ls-seen="1">Introspect: Darrell Mathes</a><br />
+<a href="http://www.snowboardermag.com/videos/vans-presents-introspect-pat-moore/">Introspect: Pat Moore</a></p>
+<p>The post <a href="http://www.snowboardermag.com/videos/vans-presents-introspect-iouri-podladtchikov/">Vans Presents Introspect: Iouri Podladtchikov</a> appeared first on <a href="http://www.snowboardermag.com">Snowboarder Magazine</a>.</p>]]>
+            </content:encoded>
+            <wfw:commentRss>http://www.snowboardermag.com/videos/vans-presents-introspect-iouri-podladtchikov/feed/</wfw:commentRss>
+            <slash:comments>0</slash:comments>
+            <enclosure url="http://cdn.snowboardermag.com/files/2014/01/Vans-Introspect-IPod-Jan14-fi-150x150.jpg" length="7646" type="image/jpg" />
+        </item>
+
+    </channel>
+</rss>

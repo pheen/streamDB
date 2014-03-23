@@ -1,0 +1,8 @@
+= form_tag(users_login_path, class: 'login') do
+  %a.show_form
+  #login_form
+    = label_tag 'Username:'
+    = text_field_tag 'user[username]'
+    = label_tag 'Password:'
+    = password_field_tag 'user[password]'
+    = submit_tag 'Login'

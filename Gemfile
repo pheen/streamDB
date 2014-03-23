@@ -43,3 +43,17 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'haml-rails'
+
+group :development, :test do
+  gem 'youtube_it'
+  gem 'vimeo'
+
+  gem 'spin'
+  gem 'awesome_print'
+  gem 'byebug'
+  gem 'rspec-rails'
+  gem 'fuubar'
+  gem 'factory_girl'
+end

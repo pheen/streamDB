@@ -1,0 +1,42 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    >
+
+<channel>
+    <title>Transworld Snowboarding</title>
+    <atom:link href="http://snowboarding.transworld.net/feed/" rel="self" type="application/rss+xml" />
+    <link>http://snowboarding.transworld.net</link>
+    <description>Snowboarding videos, gear, photos, resorts and news</description>
+    <lastBuildDate>Mon, 03 Feb 2014 03:50:42 +0000</lastBuildDate>
+    <language>en-US</language>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+
+        <item>
+        <title>DBK And Stephan Maurer Full Part From Isenseven&#8217;s &#8220;Away We Go&#8221;</title>
+        <link>http://snowboarding.transworld.net/1000219992/videos/dck-stephan-maurer-isensevens-away-go/</link>
+        <comments>http://snowboarding.transworld.net/1000219992/videos/dck-stephan-maurer-isensevens-away-go/#comments</comments>
+        <pubDate>Mon, 03 Feb 2014 01:22:20 +0000</pubDate>
+        <dc:creator>Ben Gavelda</dc:creator>
+                <category><![CDATA[Videos]]></category>
+        <category><![CDATA[A Way We Go]]></category>
+        <category><![CDATA[David Bertschinger Karg]]></category>
+        <category><![CDATA[DBK]]></category>
+        <category><![CDATA[Isenseven]]></category>
+        <category><![CDATA[Stephan Maurer]]></category>
+
+        <guid isPermaLink="false">http://snowboarding.transworld.net/?p=1000219992</guid>
+        <description><![CDATA[<p>Two bad ass Swiss boarders boardin' pow.</p><p>The post <a href="http://snowboarding.transworld.net/1000219992/videos/dck-stephan-maurer-isensevens-away-go/">DBK And Stephan Maurer Full Part From Isenseven&#8217;s &#8220;Away We Go&#8221;</a> appeared first on <a href="http://snowboarding.transworld.net">Transworld Snowboarding</a>.</p>]]></description>
+        <wfw:commentRss>http://snowboarding.transworld.net/1000219992/videos/dck-stephan-maurer-isensevens-away-go/feed/</wfw:commentRss>
+        <slash:comments>0</slash:comments>
+        </item>
+
+    </channel>
+</rss>

@@ -1,0 +1,11 @@
+#darken
+  = form_tag(users_create_path, class: 'create') do
+    %a.show_form
+    .login_form
+      = label_tag 'Username: '
+      = text_field_tag 'user[username]'
+      = label_tag 'Email: '
+      = text_field_tag 'user[email]'
+      = label_tag 'Password: '
+      = password_field_tag 'user[password]'
+      = submit_tag 'Create Account'

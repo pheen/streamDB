@@ -1,0 +1,43 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+    >
+
+<channel>
+    <title>Transworld Snowboarding</title>
+    <atom:link href="http://snowboarding.transworld.net/feed/" rel="self" type="application/rss+xml" />
+    <link>http://snowboarding.transworld.net</link>
+    <description>Snowboarding videos, gear, photos, resorts and news</description>
+    <lastBuildDate>Mon, 03 Feb 2014 03:50:42 +0000</lastBuildDate>
+    <language>en-US</language>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    
+        <item>
+        <title>SIA 2014 Day Two Video Interviews</title>
+        <link>http://snowboarding.transworld.net/1000219960/videos/sia-2014-day-two-video-interviews/</link>
+        <comments>http://snowboarding.transworld.net/1000219960/videos/sia-2014-day-two-video-interviews/#comments</comments>
+        <pubDate>Sun, 02 Feb 2014 21:31:25 +0000</pubDate>
+        <dc:creator>hondo</dc:creator>
+                <category><![CDATA[Videos]]></category>
+        <category><![CDATA[Blake Paul]]></category>
+        <category><![CDATA[featured videos]]></category>
+        <category><![CDATA[gigi ruef]]></category>
+        <category><![CDATA[Jonah Owen]]></category>
+        <category><![CDATA[sia]]></category>
+        <category><![CDATA[sia 2014]]></category>
+
+        <guid isPermaLink="false">http://snowboarding.transworld.net/?p=1000219960</guid>
+        <description><![CDATA[<p>Day two at SIA was one for the books. We talked to a few people about some new gear,...</p><p>The post <a href="http://snowboarding.transworld.net/1000219960/videos/sia-2014-day-two-video-interviews/">SIA 2014 Day Two Video Interviews</a> appeared first on <a href="http://snowboarding.transworld.net">Transworld Snowboarding</a>.</p>]]></description>
+        <wfw:commentRss>http://snowboarding.transworld.net/1000219960/videos/sia-2014-day-two-video-interviews/feed/</wfw:commentRss>
+        <slash:comments>0</slash:comments>
+        </item>
+
+    </channel>
+</rss>

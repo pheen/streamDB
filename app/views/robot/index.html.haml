@@ -1,0 +1,9 @@
+%h2 Robot
+
+= form_tag robot_start_scraping_path do
+  = label :scrape, 'TransworldSnow'
+  = check_box_tag :scrape, :TransworldSnow
+  = label :scrape, 'SnowboarderMag'
+  = check_box_tag :scrape, :sbm
+  %br
+  = submit_tag 'Save Changes'

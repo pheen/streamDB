@@ -1,4 +1,11 @@
 StreamDB::Application.routes.draw do
+  get "users/new"
+  get "users/create"
+  post "users/login"
+  root 'streams#index'
+  get 'robot' => 'robot#index'
+  post 'robot/start_scraping' => 'robot#start_scraping'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
