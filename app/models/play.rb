@@ -9,6 +9,14 @@ class Play < ActiveRecord::Base
     find_by_user_id(user) || None.new
   end
 
+  after_initialize do
+    # does this even work?
+    # todo: move default to db
+    if self.new_record?
+      self.play_count = 0
+    end
+  end
+
   class None
     attr_accessor :play_count
 

@@ -1,13 +1,14 @@
 module Sites
-  class TransworldSnow
+  class TransworldSkate
     include Wordpress
 
     def initialize(url)
       @url = url
+      @video_html = Nokogiri::HTML(open('http://skateboarding.transworld.net/category/videos/'))
     end
 
-    def self.scrape(url = 'http://snowboarding.transworld.net/feed/')
-      tws = TransworldSnow.new(url)
+    def self.scrape(url = 'http://skateboarding.transworld.net/feed/')
+      tws = TransworldSkate.new(url)
       tws.scrape
     end
 
@@ -15,13 +16,13 @@ module Sites
       video_nodes(@url).map do |xml|
         node_details(xml).merge(
           post_url:  xml.css('link').text,
-          sport: 'snow'
+          sport: 'skate'
         )
       end
     end
 
     def node_details(xml)
-      node_set = find_nodes(xml)
+      node_set = find_node(xml)
       node_info = Scrapper.find_info(node_set)
 
       if node_info.one?
@@ -31,17 +32,22 @@ module Sites
       end
     end
 
-    def find_nodes(xml)
+    def find_node(xml)
       url  = xml.css('link').text
       html = Nokogiri::HTML(open(url))
-      selectors = {
-        vimeo: '.vvqvimeo, iframe[src*="player.vimeo.com/video/"]',
-        youtube: '.vvqyoutube, iframe[src*="youtube.com/embed/"]'
-      }
+      selectors = [
+        # vimeo
+        'iframe[src*="player.vimeo.com/video/"]',
+        # youtube
+        '.vvqyoutube',
+        'iframe[src*="youtube.com/embed/"]'
+      ]
 
-      selectors.values.map do |selector|
+      node = selectors.map do |selector|
         html.css(selector)
       end.flatten.first
+
+      node
     end
 
     def generic_info(xml)
@@ -53,11 +59,8 @@ module Sites
     end
 
     def thumbnail(post_url)
-      post_html = Nokogiri::HTML(open(post_url))
-      thumb     = post_html.css('img[class*="wp-image"]').attr('src').value
-
-      ## FAKE
-      thumb || 'http://www.waterville.com/userfiles/image/images/logo-transworld.gif'
+      img_url = @video_html.css("a[href='#{post_url}'] > img").attr('src').value
+      img_url.sub('-145x82', '')
     end
   end
 end

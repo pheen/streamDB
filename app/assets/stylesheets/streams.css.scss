@@ -6,11 +6,40 @@ body {
   font-family: 'Calibri';
 }
 
-ul {
+.page {
   position: absolute;
   top: 7%;
   left: 7%;
   width: 500px;
+
+  .page_back, .page_forward {
+    display: inline-block;
+    margin: 25px 0 0 15px;
+    float: right;
+    width: 35px;
+    height: 35px;
+    border: none;
+    outline: none;
+    opacity: 0.75;
+    transition: opacity .25s;
+
+    &:hover {
+      opacity: 1
+    }
+  }
+
+  .page_back {
+    background: url('icon_backarrow.png') no-repeat left center;
+  }
+
+  .page_forward {
+    background: url('icon_forwardarrow.png') no-repeat right center;
+  }
+}
+
+ul {
+  height: 655px;
+  box-shadow: 0 1px 1px #000;
 }
 
 li {
@@ -19,9 +48,8 @@ li {
   width: 50%;
   height: 135px;
   background-size: 100% !important;
-  opacity: .6;
+  opacity: .5;
   transition: opacity .25s;
-  
 
   &:first-of-type {
     width: 100%;

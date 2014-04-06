@@ -3,13 +3,25 @@ require 'sites'
 class Robot
   include Sites
 
-  SITES = [
-    TransworldSnow,
-    SnowboarderMag
-  ]
+  SITES = {
+    snow: [
+      TransworldSnow,
+      SnowboarderMag,
+      VimeoFeed.new('snow', 'user1083256')
+    ],
+    skate: [
+      TransworldSkate,
+      YoutubeFeed.new('skate', 'ThrasherMagazine')
+    ],
+    surf: [
+      TransworldSurf,
+      YoutubeFeed.new('surf', 'surfer')
+    ]
+  }
 
-  def self.scrape(*sites)
-    sites = SITES if sites.empty?
+  def self.scrape(*sports)
+    sports = SITES.keys if sports.empty?
+    sites = sports.map {|sport| SITES.fetch(sport) }.flatten
     results = sites.map(&:scrape).flatten
 
     results.map! do |video|

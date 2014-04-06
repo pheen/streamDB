@@ -2,9 +2,9 @@ require 'youtube_scrapper'
 require 'vimeo_scrapper'
 
 module Scrapper
-  def self.find_info(node_set)
+  def self.find_info(node)
     result = [VimeoScrapper, YoutubeScrapper].map do |scrapper|
-      scrapper.find_info(node_set)
+      scrapper.find_info(node)
     end
 
     result.reject do |scrapper|

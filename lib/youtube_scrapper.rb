@@ -2,17 +2,17 @@ require 'youtube_it'
 
 module Scrapper
   class YoutubeScrapper
-    def self.find_info(node_set)
-      scrapper = YoutubeScrapper.new(node_set)
+    def self.find_info(node)
+      scrapper = YoutubeScrapper.new(node)
       scrapper.find_info
     end    
 
-    def initialize(node_set)
-      @node_set = node_set
+    def initialize(node)
+      @node = node
     end
 
     def find_info
-      return {} unless valid_node_set?
+      return {} unless valid_node?
 
       {
         title: @api.title,
@@ -22,23 +22,19 @@ module Scrapper
       }
     end
 
-    def valid_node_set?
-      @node_set.one? &&
+    def valid_node?
+      @node &&
       set_id &&
       set_api
-    rescue
-      false
     end
 
     def set_id
-      node = @node_set.first
-      pattern = /\.com\/embed\/(?<id>[\d\w\-]*)/
+      url = @node.attr('src') || @node.css('a').attr('href')
+      pattern = /\.com\/(embed|watch)\/?(\?v=)?(?<id>[\d\w\-]*)/
+      match = url.to_s.match(pattern)
 
-      url = node.attr('src')
-      @id = url.to_s.match(pattern)[:id]
-
-      if @id =~ /[\d\w\-]{11}/
-        true
+      if match && match[:id] =~ /[\d\w\-]{11}/
+        @id = match[:id] and true
       else
         false
       end

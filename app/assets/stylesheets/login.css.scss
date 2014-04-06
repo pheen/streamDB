@@ -1,7 +1,7 @@
 form.login {
   z-index: 1;
   position: fixed;
-  top: 30px;
+  top: 50px;
   right: 10%;
   opacity: 0.5;
 
@@ -9,11 +9,17 @@ form.login {
     position: absolute;
     display: inline-block;
     width: 50px;
-    height: 40px;
-    background: #000;
-    top: -30px;
+    height: 50px;
+    background: url('icon_dropdown_arrow.png') no-repeat center bottom;
+    top: -55px;
     right: 0;
     cursor: pointer;
+    opacity: 0.75;
+    transition: opacity .25s;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   #login_form {

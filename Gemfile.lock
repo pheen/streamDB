@@ -26,6 +26,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
+    angularjs-rails (1.2.14)
     arel (4.0.1)
     atomic (1.1.14)
     awesome_print (1.2.0)
@@ -164,6 +165,7 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    underscore-rails (1.6.0)
     vimeo (1.5.3)
       httparty (>= 0.4.5)
       httpclient (>= 2.1.5.2)
@@ -188,6 +190,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angularjs-rails
   awesome_print
   byebug
   coffee-rails (~> 4.0.0)
@@ -204,5 +207,6 @@ DEPENDENCIES
   sqlite3
   turbolinks
   uglifier (>= 1.3.0)
+  underscore-rails
   vimeo
   youtube_it

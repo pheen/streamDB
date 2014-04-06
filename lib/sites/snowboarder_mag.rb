@@ -42,7 +42,7 @@ module Sites
 
       selectors.values.map do |selector|
         html.css(selector)
-      end.flatten
+      end.flatten.first
     end
 
     def generic_info(xml)
@@ -66,14 +66,4 @@ module Sites
     end
   end
 
-
-  class YoutubeCollection
-    def scrape
-    end
-  end
-
-  class VimeoCollection
-    def scrape
-    end
-  end
 end

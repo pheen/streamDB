@@ -6,8 +6,8 @@ class Video < ActiveRecord::Base
 
   has_many :plays
 
-  def self.update
-    Robot.scrape
+  def self.update(*sports)
+    Robot.scrape(*sports)
   end
 
   def plays_by(user)

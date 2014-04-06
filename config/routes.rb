@@ -3,6 +3,8 @@ StreamDB::Application.routes.draw do
   get "users/create"
   post "users/login"
   root 'streams#index'
+  get 'streams/stream_list' => 'streams#stream_list'
+  get 'streams/play/:stream_id' => 'streams#track_play'
   get 'robot' => 'robot#index'
   post 'robot/start_scraping' => 'robot#start_scraping'
 

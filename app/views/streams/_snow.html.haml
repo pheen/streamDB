@@ -1,9 +1,11 @@
 %section#home{ 'data-speed' => "10", 'data-type' => "background" }
-  %ul.streams{ 'data-layer' => 0 }
-    - @snow_streams.each do |stream|
-      %li{ class: new?(stream), style: "background: url('#{stream.thumbnail}') 100% center;" }
-        %a{ href: stream.url, direct: stream.direct_url? }
+  .page
+    %ul.streams{ 'data-layer' => 0 }
+      %li{ :'ng-repeat' => "stream in filteredSnow | limitTo: 7", :'ng-class' => "{ new: stream.play_count == 0 }", :'ng-style' => "{ background: 'url(\"{{stream.thumbnail}}\") 100% center' }" }
+        %a{ :'href' => "{{stream.url}}", :'ng-click' => "trackPlay()", :target => '_blank' }
           %p.details
-            %span.title= stream.title
+            %span.title {{stream.title}}
             %br
-            %span.play_count= stream.plays_by(@current_user)
+            %span.play_count {{stream.play_count}}
+
+    = render('page_controls', :sport => 'snow')
