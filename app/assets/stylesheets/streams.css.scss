@@ -8,16 +8,18 @@ body {
 
 .page {
   position: absolute;
+  width: 100%;
+  height: 710px;
   top: 7%;
   left: 7%;
-  width: 500px;
+  overflow: hidden;
 
   .page_back, .page_forward {
     display: inline-block;
-    margin: 25px 0 0 15px;
-    float: right;
+    float: left;
     width: 35px;
     height: 35px;
+    margin-top: 20px;
     border: none;
     outline: none;
     opacity: 0.75;
@@ -30,14 +32,17 @@ body {
 
   .page_back {
     background: url('icon_backarrow.png') no-repeat left center;
+    margin-left: 420px;
   }
 
   .page_forward {
     background: url('icon_forwardarrow.png') no-repeat right center;
+    margin-left: 10px;
   }
 }
 
-ul {
+ul.streams {
+  width: 500px;
   height: 655px;
   box-shadow: 0 1px 1px #000;
 }
@@ -82,7 +87,7 @@ li {
     opacity: 0;
     color: #fff;
     pointer-events: none;
-    transition: all .25s;
+    transition: opacity linear .25s;
     text-shadow: 0 1px #000;
 
     .title {
@@ -100,6 +105,20 @@ li {
       line-height: 30px;
       font-size: 24px;
     }
+  }
+
+  // Angular Animations
+  &.ng-enter,
+  &.ng-leave {
+  }
+
+  &.ng-enter,
+  &.ng-leave.ng-leave-active {
+    opacity: 0;
+  }
+  &.ng-leave,
+  &.ng-enter.ng-enter-active {
+    opacity: .5;
   }
 
 }

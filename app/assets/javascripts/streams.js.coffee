@@ -23,3 +23,8 @@ $ ->
 
   $('a.show_form').on 'click', ->
     $('#login_form').toggle()
+
+  $(document).keydown (e) ->
+    if e.keyCode == 37
+      debugger
+      e.keyCode

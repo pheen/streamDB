@@ -1,5 +1,5 @@
 
-streamsApp = angular.module('streamsApp', [])
+streamsApp = angular.module('streamsApp', ['ngAnimate'])
 
 streamsApp.controller 'StreamsListCtrl', ($scope, $http) ->
 
