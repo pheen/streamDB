@@ -21,6 +21,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
     else
       render('streams')
+    end
   end
 
   def login
