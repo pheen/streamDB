@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def login
+  def logout
     @current_user = nil    
   end
 end
