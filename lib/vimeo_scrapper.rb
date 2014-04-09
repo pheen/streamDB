@@ -1,5 +1,3 @@
-require 'vimeo'
-
 module Scrapper
   class VimeoScrapper
     def self.find_info(node)
@@ -19,7 +17,7 @@ module Scrapper
         direct_url: "https://player.vimeo.com/video/#{@id}",
         thumbnail: @api["thumbnail_large"],
         post_date: @api['upload_date'].to_datetime
-      }      
+      }
     end
 
     def valid_node?
