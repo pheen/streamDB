@@ -1,5 +1,3 @@
-require 'youtube_it'
-
 module Scrapper
   class YoutubeScrapper
     def self.find_info(node)
