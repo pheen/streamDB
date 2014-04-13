@@ -1,8 +1,7 @@
 
 streamsApp = angular.module('streamsApp', ['ngAnimate'])
 
-streamsApp.controller 'StreamsListCtrl', ($scope, $http) ->
-
+StreamsListCtrl  = ($scope, $http) ->
   $http.get('streams/stream_list').success (data) ->
     $scope.snow  = []
     $scope.skate = []
@@ -51,3 +50,6 @@ streamsApp.controller 'StreamsListCtrl', ($scope, $http) ->
     sport = streams[0].sport
     if $scope.currentPage[sport] > 1
       $scope.currentPage[sport]--
+
+StreamsListCtrl.$inject = ['$scope', '$http'];
+streamsApp.controller('StreamsListCtrl', StreamsListCtrl)
