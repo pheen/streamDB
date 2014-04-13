@@ -22,7 +22,7 @@ class StreamsController < ApplicationController
 
   def update_streams
     worker = IronWorkerNG::Client.new
-    task = client.tasks.create(
+    task = worker.tasks.create(
       'update_streams',
       'database' => Rails.configuration.database_configuration[Rails.env],
       'sports'   => [:snow, :skate, :surf]
