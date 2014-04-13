@@ -1,5 +1,5 @@
-# define the runtime language, this can be ruby, java, node, php, go, etc.
 runtime "ruby"
+exec "update_steams.rb"
 
 gem "pg"
 gem "activerecord"
@@ -11,6 +11,3 @@ dir "../app/models/"
 dir "../lib/"
 
 ActiveRecord::Base.establish_connection(params['database'])
-
-# exec is the file that will be executed:
-exec "update_steams.rb"
