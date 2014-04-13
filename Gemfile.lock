@@ -47,6 +47,7 @@ GEM
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    exceptiontrap (1.0.7)
     excon (0.31.0)
     execjs (2.0.2)
     factory_girl (4.3.0)
@@ -208,6 +209,7 @@ DEPENDENCIES
   awesome_print
   byebug
   coffee-rails (~> 4.0.0)
+  exceptiontrap
   factory_girl
   fuubar
   haml-rails
