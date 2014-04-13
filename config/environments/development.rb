@@ -26,4 +26,7 @@ StreamDB::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  ENV['IRON_WORKER_TOKEN'] = '5349c95a4efaba0009000056'
+  ENV['IRON_WORKER_PROJECT_ID'] = 'oo8pd7_XsFKqLPTitq_qDG40utQ'
 end

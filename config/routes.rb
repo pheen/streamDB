@@ -5,6 +5,7 @@ StreamDB::Application.routes.draw do
   root 'streams#index'
   get 'streams/stream_list' => 'streams#stream_list'
   get 'streams/play/:stream_id' => 'streams#track_play'
+  get 'streams/update' => 'streams#update_streams'
   get 'robot' => 'robot#index'
   post 'robot/start_scraping' => 'robot#start_scraping'
 

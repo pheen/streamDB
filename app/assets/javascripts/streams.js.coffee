@@ -24,6 +24,10 @@ $ ->
   $('a.show_form').on 'click', ->
     $('#login_form').toggle()
 
+  $('#update').on 'click', ->
+    $.get 'streams/update', (json) ->
+      alert(json.queued)
+
   $(document).keydown (e) ->
     if e.keyCode == 37
       debugger

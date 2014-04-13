@@ -45,6 +45,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'iron_worker_ng'
 gem 'haml-rails'
 gem 'angularjs-rails'
 gem 'underscore-rails'

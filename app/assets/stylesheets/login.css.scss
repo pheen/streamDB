@@ -1,4 +1,4 @@
-form.login {
+form.login, form.create {
   z-index: 1;
   position: fixed;
   top: 50px;
@@ -22,7 +22,7 @@ form.login {
     }
   }
 
-  #login_form {
+  #login_form, #create_form {
     display: none;
     width: 300px;
     background: #000;

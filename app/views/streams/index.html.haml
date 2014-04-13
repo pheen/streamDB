@@ -1,6 +1,8 @@
--# if @current_user.username == 'guest'
-= render('users/create')
-= render('users/login')
+%a{ :id => "update" } Update
+
+- if @current_user.username == 'Guest'
+  -# render('users/create')
+  = render('users/login')
 
 = render('snow')
 = render('skate')

@@ -14,10 +14,12 @@ class ApplicationController < ActionController::Base
 
   def set_current_user
     @current_user = User.find_by_id(session[:user_id])
-    @current_user ||= User.find_by_id(1) # Guest
+    @current_user ||= GuestUser.new(1, 'Guest')
   end
 
   def logout_user
     @current_user, session[:user_id] = nil, nil
   end
+
+  GuestUser = Struct.new(:id, :username)
 end

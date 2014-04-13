@@ -20,6 +20,19 @@ class StreamsController < ApplicationController
     render json: stat
   end
 
+  def update_streams
+    worker = IronWorkerNG::Client.new
+    task = client.tasks.create(
+      'update_streams',
+      'database' => Rails.configuration.database_configuration[Rails.env],
+      'sports'   => [:snow, :skate, :surf]
+    )
+
+    render json: {
+      queued: 'Snow, skate, and surf videos are being updated'
+    }
+  end
+
 private
 
   def snow_streams
