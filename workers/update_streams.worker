@@ -9,8 +9,10 @@ gem "youtube_it"
 gem "vimeo"
 
 file "../lib/robot.rb"
+file "../lib/sites.rb"
 
 dir "../app/models/"
 dir "../lib/"
+dir "../lib/sites/"
 
 exec "update_streams.rb"
