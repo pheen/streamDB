@@ -1,5 +1,6 @@
 runtime "ruby"
-exec "update_steams.rb"
+
+remote
 
 gem "pg"
 gem "activerecord"
@@ -7,7 +8,9 @@ gem "nokogiri"
 gem "youtube_it"
 gem "vimeo"
 
+file "../lib/robot.rb"
+
 dir "../app/models/"
 dir "../lib/"
 
-ActiveRecord::Base.establish_connection(params['database'])
+exec "update_streams.rb"

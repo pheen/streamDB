@@ -1,15 +1,7 @@
 require 'active_record'
 require 'pg'
 require 'models/video'
-require 'robot'
 
-def setup_database
-  puts "Database connection details:#{params['database'].inspect}"
-  return unless params['database']
-  # estabilsh database connection
-  ActiveRecord::Base.establish_connection(params['database'])
-end
+ActiveRecord::Base.establish_connection(params['database'])
 
-setup_database
-
-Robot.scrape(params['sports'])
+Video.update(params['sports'])
