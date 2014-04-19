@@ -19,7 +19,7 @@ class Robot
     ]
   }
 
-  def self.scrape(*sports)
+  def self.scrape(sports)
     sports = SITES.keys if sports.empty?
     sites = sports.map {|sport| SITES.fetch(sport) }.flatten
     results = sites.map(&:scrape).flatten

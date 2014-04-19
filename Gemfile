@@ -48,6 +48,8 @@ end
 gem 'iron_worker_ng'
 gem 'exceptiontrap'
 
+gem 'sucker_punch'
+
 gem 'haml-rails'
 gem 'angularjs-rails'
 gem 'underscore-rails'
