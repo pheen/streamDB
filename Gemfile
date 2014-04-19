@@ -50,6 +50,7 @@ gem 'exceptiontrap'
 
 gem 'sucker_punch'
 
+gem 'nokogiri'
 gem 'haml-rails'
 gem 'angularjs-rails'
 gem 'underscore-rails'

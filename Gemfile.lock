@@ -221,6 +221,7 @@ DEPENDENCIES
   iron_worker_ng
   jbuilder (~> 1.2)
   jquery-rails
+  nokogiri
   pg (= 0.17.1)
   rails (= 4.0.2)
   rspec-rails

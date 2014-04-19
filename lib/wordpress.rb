@@ -1,5 +1,3 @@
-require 'nokogiri'
-
 module Wordpress
   def video_nodes(url)
     xml = Nokogiri::XML(open(url))
