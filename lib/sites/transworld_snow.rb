@@ -1,3 +1,5 @@
+require 'nokogiri'
+
 module Sites
   class TransworldSnow
     include Wordpress
