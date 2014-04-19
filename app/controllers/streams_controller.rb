@@ -21,8 +21,8 @@ class StreamsController < ApplicationController
   end
 
   def update_streams
-    #UpdateStreams.new.async.perform([:snow, :skate, :surf])
-    UpdateStreams.new.perform([:snow, :skate, :surf])
+    UpdateStreams.new.async.perform([:snow, :skate, :surf])
+    #UpdateStreams.new.perform([:snow, :skate, :surf])
 
     render json: {
       queued: 'Snow, skate, and surf videos are being updated'
