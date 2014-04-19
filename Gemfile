@@ -55,10 +55,10 @@ gem 'haml-rails'
 gem 'angularjs-rails'
 gem 'underscore-rails'
 
-group :development, :test do
-  gem 'youtube_it'
-  gem 'vimeo'
+gem 'youtube_it'
+gem 'vimeo'
 
+group :development, :test do
   gem 'spin'
   gem 'awesome_print'
   gem 'byebug'
