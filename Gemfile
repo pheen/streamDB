@@ -49,6 +49,7 @@ gem 'iron_worker_ng'
 gem 'exceptiontrap'
 
 gem 'sucker_punch'
+gem 'fist_of_fury'
 
 gem 'nokogiri'
 gem 'haml-rails'
