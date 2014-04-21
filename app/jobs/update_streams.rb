@@ -1,3 +1,5 @@
+require 'robot'
+
 class UpdateStreams
   include SuckerPunch::Job
   include FistOfFury::Recurrent

@@ -32,15 +32,15 @@ class StreamsController < ApplicationController
 private
 
   def snow_streams
-    @snow_streams ||= Video.where(sport: 'snow').order('created_at DESC').first(28)
+    @snow_streams ||= Video.where(sport: 'snow').order('created_at DESC').last(28).reverse
   end
 
   def skate_streams
-    @skate_streams ||= Video.where(sport: 'skate').order('created_at DESC').first(28)
+    @skate_streams ||= Video.where(sport: 'skate').order('created_at DESC').last(28).reverse
   end
 
   def surf_streams
-    @surf_streams ||= Video.where(sport: 'surf').order('created_at DESC').first(28)
+    @surf_streams ||= Video.where(sport: 'surf').order('created_at DESC').last(28).reverse
   end
 
   def plays
