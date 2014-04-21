@@ -2,9 +2,11 @@ class UpdateStreams
   include SuckerPunch::Job
   include FistOfFury::Recurrent
 
-  def perform(sites)
+  def perform
+    sports = [:snow, :surf, :skate]
+
     ActiveRecord::Base.connection_pool.with_connection do
-      Robot.scrape(sites)
+      Robot.scrape(sports)
     end
   end
 
