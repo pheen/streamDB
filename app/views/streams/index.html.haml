@@ -1,9 +1,139 @@
 -#%a{ :id => "update" } Update
 
-- if @current_user.username == 'Guest'
-  -# render('users/create')
-  = render('users/login')
+-# - if @current_user.username == 'Guest'
+-#   -# render('users/create')
+-#   = render('users/login')
+-# 
+-# = render('snow')
+-# = render('skate')
+-# = render('surf')
 
-= render('snow')
-= render('skate')
-= render('surf')
+-##section1
+-##section2
+-##section3
+
+#contols
+  #p1
+    Snow
+  #p2
+    Skate
+  #p3
+    Surf
+
+#cube
+  #f3
+    = render('surf')
+  #f2
+    = render('skate')
+  #f1
+    = render('snow')
+
+:css
+  html {
+    height: 100%;
+  }
+
+  body {
+    background: #999;
+    height: 100%;
+    -webkit-perspective: 1000px;
+  }
+
+  section .page {
+    pointer-events: all;
+  }
+
+  #cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+
+    pointer-events: none;
+
+    transition: -webkit-transform .75s ease;
+  }
+
+  #f1, #f2, #f3 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  #f1 {
+    background: red;
+  }
+
+  #f2 {
+    background: blue;
+    display: none;
+  }
+
+  #f3 {
+    background: green;
+    display: none;
+  }
+
+  #contols {
+    width: 250px;
+    height: 30px;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    z-index: 1;
+  }
+
+  #p1, #p2, #p3 {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background: black;
+    color: white;
+    margin-right: 20px;
+  }
+
+
+:javascript
+  $(function() {
+    setup = function() {
+      $('#cube').css({ '-webkit-transform': "translateZ(  "+ $(window).height() / 2 +"px )" });
+      $('#f1')  .css({ '-webkit-transform': "translateZ( -"+ $(window).height() / 2 +"px )" });
+      $('#f2')  .css({
+        '-webkit-transform': "rotateX( -90deg ) translateZ( "+ $(window).height() / 2 +"px ) rotate( 180deg ) matrix(-1, 0, 0, 1, 0, 0)",
+        display: 'none'
+      });
+      $('#f3')  .css({
+        '-webkit-transform': "rotateX(  90deg ) translateZ( "+ $(window).height() / 2 +"px ) rotate( 180deg ) matrix(-1, 0, 0, 1, 0, 0)",
+        display: 'none'
+      });
+    }
+
+    $(window).on('resize', function() {
+      setup();
+    });
+    setup();
+
+    $('#p1').on('click', function() {
+      $('#cube').css({ '-webkit-transform': "translateZ( "+ $(window).height() / 2 +"px )" });
+      //$('#f2')  .fadeOut();
+      //$('#f3')  .fadeOut();
+      console.log('#p1 click');
+    });
+
+    $('#p2').on('click', function() {
+      $('#f2')  .fadeIn();
+      $('#f3')  .fadeOut();
+      $('#cube').css({ '-webkit-transform': "translateZ( "+ $(window).height() / 2 +"px ) rotateX( -90deg )" });
+      console.log('#p2 click');
+    });
+
+    $('#p3').on('click', function() {
+      $('#f3')  .fadeIn();
+      $('#f2')  .fadeOut();
+      $('#cube').css({ '-webkit-transform': "translateZ( "+ $(window).height() / 2 +"px ) rotateX( 90deg )" });
+      console.log('#p3 click');
+    });
+  });
+
