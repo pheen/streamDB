@@ -1,11 +1,11 @@
 require 'robot'
 
-class UpdateStreams
+class UpdateSkateStreams
   include SuckerPunch::Job
   include FistOfFury::Recurrent
 
   def perform
-    sports = [:snow, :surf, :skate]
+    sports = [:skate]
 
     ActiveRecord::Base.connection_pool.with_connection do
       Robot.scrape(sports)

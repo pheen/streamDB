@@ -4,6 +4,8 @@ if defined?(Rails::Server)
     # Jobs can be scheduled here. Example:
     # SayHiJob.recurs { secondly(3) }
 
-    UpdateStreams.recurs { hourly }
+    UpdateSnowStreams.recurs  { minutely(60) }
+    UpdateSkateStreams.recurs { minutely(70) }
+    UpdateSurfStreams.recurs  { minutely(80) }
   end
 end
