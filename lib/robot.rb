@@ -51,5 +51,7 @@ class Robot
     end
 
     puts results
+  rescue => e
+    puts "ERROR! #{e}"
   end
 end
