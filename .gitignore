@@ -15,4 +15,4 @@
 /log/*.log
 /tmp
 
-/iron.json
+config/database.yml
