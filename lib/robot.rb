@@ -52,4 +52,5 @@ class Robot
 
     Rails.logger.info results
     puts results
+  end
 end
