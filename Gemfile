@@ -42,6 +42,7 @@ end
 # Use Capistrano for deployment
 gem 'capistrano', '~> 3.2', require: false, group: :development
 gem 'capistrano-rvm'
+gem 'capistrano-rails-console'
 
 gem 'sucker_punch'
 gem 'fist_of_fury'

@@ -54,10 +54,10 @@ module Sites
 
     def thumbnail(post_url)
       post_html = Nokogiri::HTML(open(post_url))
-      thumb     = post_html.css('img[class*="wp-image"]').attr('src').value
+      thumb     = post_html.css('img[class*="wp-image"]')
 
       ## FAKE
-      thumb || 'http://www.waterville.com/userfiles/image/images/logo-transworld.gif'
+      thumb.present? ? thumb.attr('src').value : 'http://www.waterville.com/userfiles/image/images/logo-transworld.gif'
     end
   end
 end
