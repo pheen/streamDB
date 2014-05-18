@@ -50,8 +50,8 @@ class Robot
       end
     end
 
-    puts results
+    Rails.logger.info results
   rescue => e
-    puts "ERROR! #{e}"
+    Rails.logger.info "ERROR! #{e}"
   end
 end

@@ -8,4 +8,11 @@ if defined?(Rails::Server)
     UpdateSkateStreams.recurs { minutely(70) }
     UpdateSurfStreams.recurs  { minutely(80) }
   end
+
+  Rails.logger.info "Updating Snow Streams"
+  UpdateSnowStreams.new.async.perform
+  Rails.logger.info "Updating Skate Streams"
+  UpdateSkateStreams.new.async.perform
+  Rails.logger.info "Updating Surf Streams"
+  UpdateSurfStreams.new.async.perform
 end
