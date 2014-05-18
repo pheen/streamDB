@@ -40,16 +40,8 @@ end
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano', group: :development
-gem 'capistrano-bundler'
-gem 'capistrano-rails'
-gem 'capistrano-rvm', github: 'capistrano/rvm'
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
-gem 'iron_worker_ng'
-gem 'exceptiontrap'
+gem 'capistrano', '~> 3.2', require: false, group: :development
+gem 'capistrano-rvm'
 
 gem 'sucker_punch'
 gem 'fist_of_fury'
@@ -63,6 +55,8 @@ gem 'youtube_it'
 gem 'vimeo'
 
 group :development, :test do
+  gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-rails', '~> 1.1', require: false
   gem 'spin'
   gem 'awesome_print'
   gem 'byebug'
