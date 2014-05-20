@@ -6,10 +6,8 @@ class StreamsController < ApplicationController
 
   def stream_list
     render json: {
-      snowStreams:  snow_streams,
-      skateStreams: skate_streams,
-      surfStreams: surf_streams,
-      plays: plays
+      new_streams: new_streams,
+      old_streams: old_streams
     }
   end
 
@@ -31,19 +29,50 @@ class StreamsController < ApplicationController
 
 private
 
-  def snow_streams
-    @snow_streams ||= Video.where(sport: 'snow').order('created_at DESC').first(28)
+  def sports_list
+    ['snow', 'skate', 'surf']
   end
 
-  def skate_streams
-    @skate_streams ||= Video.where(sport: 'skate').order('created_at DESC').first(28)
+  def new_streams
+    recent_streams = sports_list.each_with_object({}) do |sport, hsh|
+      hsh[sport] = Video.recent(sport)
+    end
+
+    plays = Play.where(user_id: @current_user.id, video_id: recent_streams.values.flatten)
+    plays = plays.pluck(:video_id, :play_count).each_with_object({}) do |(video_id, play_count), hsh|
+      hsh[video_id] = play_count
+    end
+
+    recent_streams.each do |sport, streams|
+      recent_streams[sport] = streams.map do |stream|
+        s = stream.attributes.merge({
+          play_count: plays.fetch(stream.id) { 0 },
+          url: stream['direct_url'] || stream['post_url']
+        })
+
+        s[:play_count] == 0 ? s : nil
+      end.compact
+    end
   end
 
-  def surf_streams
-    @surf_streams ||= Video.where(sport: 'surf').order('created_at DESC').first(28)
+  def old_streams
+    arr   = Play.where(user_id: @current_user.id).pluck(:video_id, :play_count)
+    plays = arr.each_with_object({}) do |(video_id, play_count), hsh|
+      hsh[video_id] = play_count
+    end
+
+    streams = Video.where(id: plays.keys).map(&:attributes)
+    streams.each do |stream|
+      stream['play_count'] = plays[stream['id']]
+      stream['url']        = stream['direct_url'] || stream['post_url']
+    end
+
+    streams.group_by do |stream|
+      stream['sport']
+    end
   end
 
-  def plays
-    @plays ||= Play.where(user_id: @current_user.id, video_id: (snow_streams + skate_streams))
+  def plays_by_user(streams)
+    Play.where(user_id: @current_user.id, video_id: (streams))
   end
 end

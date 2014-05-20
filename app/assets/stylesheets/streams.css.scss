@@ -2,17 +2,50 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html {
+  height: 100%;
+}
+
 body {
+  background: #747474;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  -webkit-perspective: 1000px;
   font-family: 'Calibri';
+}
+
+.sport {
+  background: center center no-repeat fixed;
+  background-size: cover;
+  height: 100%;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1920px;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0,0,0,0.8);
+}
+
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 1;
 }
 
 .page {
   position: absolute;
-  width: 100%;
+  width: 80%;
   height: 710px;
   top: 7%;
-  left: 7%;
+  left: 10%;
   overflow: hidden;
+  pointer-events: all;
+  z-index: 2;
 
   .page_back, .page_forward {
     display: inline-block;
@@ -41,87 +74,130 @@ body {
   }
 }
 
-ul.streams {
+ul.old_streams {
+  width: 410px;
+  height: 100%;
+  float: right;
+  overflow: scroll;
+
+  li {
+    height: 115px;
+
+    a:first-child {
+      float: left;
+      width: 100px;
+      height: 100px;
+      margin-right: 10px;
+      background-size: cover;
+    }
+
+    span {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    p {
+      display: inline-block;
+      float: left;
+      width: 300px;
+    }
+  }
+}
+
+ul.new_streams {
   width: 500px;
   height: 655px;
-  box-shadow: 0 1px 1px #000;
-}
-
-li {
-  display: inline-block;
   float: left;
-  width: 50%;
-  height: 135px;
-  background-size: 100% !important;
-  opacity: .5;
-  transition: opacity .25s;
+  box-shadow: 0 1px 1px #000;
+  overflow: hidden;
 
-  &:first-of-type {
-    width: 100%;
-    height: 250px;
-  }
+  li {
+    position: relative;
+    left: 0;
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 135px;
+    background-size: 100% !important;
+    opacity: .5;
+    transition: all .25s;
 
-  &.new {
-    opacity: .9;
-  }
+    &:first-of-type {
+      width: 100%;
+      height: 250px;
+    }
 
-  &:hover {
-    opacity: 1;
+    &.new {
+      opacity: .9;
+    }
+
+    &:hover {
+      opacity: 1;
+
+      .details {
+        opacity: 1;
+      }
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
 
     .details {
-      opacity: 1;
+      position: fixed;
+      left: 650px;
+      top: 100px;
+      width: 50%;
+      opacity: 0;
+      color: #fff;
+      pointer-events: none;
+      transition: opacity linear .25s;
+      text-shadow: 0 1px #000;
+
+      .title {
+        font: 25px 'Calibri';
+      }
+
+      .play_count {
+        display: inline-block;;
+        height: 30px;
+        width: 75px;
+        margin-top: 10px;
+        padding-left: 45px;
+        background: url('icon_eye.png') no-repeat left center;
+        background-size: 32px;
+        line-height: 30px;
+        font-size: 24px;
+      }
     }
-  }
 
-  a {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  .details {
-    position: fixed;
-    left: 650px;
-    top: 100px;
-    width: 50%;
-    opacity: 0;
-    color: #fff;
-    pointer-events: none;
-    transition: opacity linear .25s;
-    text-shadow: 0 1px #000;
-
-    .title {
-      font: 25px 'Calibri';
+    // Angular Animations
+    &.ng-enter, &.ng-enter-active {
+      opacity: 0;
     }
 
-    .play_count {
-      display: inline-block;;
-      height: 30px;
-      width: 75px;
-      margin-top: 10px;
-      padding-left: 45px;
-      background: url('icon_eye.png') no-repeat left center;
-      background-size: 32px;
-      line-height: 30px;
-      font-size: 24px;
+    &.ng-leave, &.ng-leave-active {
+      opacity: 0;
     }
-  }
 
-  // Angular Animations
-  &.ng-enter,
-  &.ng-leave {
-  }
+    &.ng-enter,
+    &.ng-leave.ng-leave-active {
 
-  &.ng-enter,
-  &.ng-leave.ng-leave-active {
-    opacity: 0;
-  }
-  &.ng-leave,
-  &.ng-enter.ng-enter-active {
-    opacity: .5;
-  }
+    }
+    &.ng-leave,
+    &.ng-enter.ng-enter-active {
+    }
 
+  }
 }
+
+
+
+
+
+
 
 #update {
   position: absolute;
@@ -132,4 +208,45 @@ li {
   cursor: pointer;
   z-index: 1;
   opacity: .2;
+}
+
+#cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+
+  pointer-events: none;
+
+  transition: -webkit-transform .75s ease;
+}
+
+#f1, #f2, #f3 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#f2, #f3 {
+  display: none;
+}
+
+#contols {
+  width: 250px;
+  height: 30px;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  z-index: 3;
+}
+
+#p1, #p2, #p3 {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  background: black;
+  color: white;
+  margin-right: 20px;
 }

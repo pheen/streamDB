@@ -3,32 +3,36 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  # Cache the Window object
-  $window = $(window)
-                
-  $('section[data-type="background"]').each ->
-    $bgobj = $(this) # assigning the object
-                    
-    $(window).scroll ->
-      # Scroll the background at var speed
-      # the yPos is a negative value because we're scrolling it UP!                
-      yPos = -($window.scrollTop() / $bgobj.data('speed')) 
-      
-      # Put together our final background position
-      coords = '50% '+ yPos + 'px'
+  setup = ->
+    $('#cube').css
+      '-webkit-transform': "translateZ(  "+ $(window).height() / 2 +"px )"
+    $('#f1').css
+      '-webkit-transform': "translateZ( -"+ $(window).height() / 2 +"px )"
+    $('#f2').css
+      '-webkit-transform': "rotateX( -90deg ) translateZ( "+ $(window).height() / 2 +"px ) rotate( 180deg ) matrix(-1, 0, 0, 1, 0, 0)",
+      display: 'none'
+    $('#f3').css
+      '-webkit-transform': "rotateX(  90deg ) translateZ( "+ $(window).height() / 2 +"px ) rotate( 180deg ) matrix(-1, 0, 0, 1, 0, 0)",
+      display: 'none'
+  setup()
 
-      # Move the background
-      $bgobj.css({ backgroundPosition: coords })
+  $(window).on 'resize', ->
+    setup()
 
+  $('#p1').on 'click', ->
+    $('#cube').css
+      '-webkit-transform': "translateZ( "+ $(window).height() / 2 +"px )"
+    #$('#f2')  .fadeOut()
+    #$('#f3')  .fadeOut()
 
-  $('a.show_form').on 'click', ->
-    $('#login_form').toggle()
+  $('#p2').on 'click', ->
+    $('#f2')  .fadeIn()
+    $('#f3')  .fadeOut()
+    $('#cube').css
+      '-webkit-transform': "translateZ( "+ $(window).height() / 2 +"px ) rotateX( -90deg )"
 
-  $('#update').on 'click', ->
-    $.get 'streams/update', (json) ->
-      alert(json.queued)
-
-  $(document).keydown (e) ->
-    if e.keyCode == 37
-      debugger
-      e.keyCode
+  $('#p3').on 'click', ->
+    $('#f3')  .fadeIn()
+    $('#f2')  .fadeOut()
+    $('#cube').css
+      '-webkit-transform': "translateZ( "+ $(window).height() / 2 +"px ) rotateX( 90deg )"

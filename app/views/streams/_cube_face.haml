@@ -1,0 +1,18 @@
+%section.sport{ style: "background-image: url(assets/#{background})" }
+  #overlay
+  .page
+    %ul.new_streams
+      %li{ :'ng-repeat' => "stream in newStreams['#{sport}'] | limitTo: (currentPage['#{sport}'] * 7) + 7 | limitTo: -7", :'ng-style' => "{ background: 'url(\"{{stream.thumbnail}}\") 100% center' }" }
+        %a{ :href => "{{stream.url}}", :'ng-click' => "trackPlay()", :target => '_blank' }
+          %p.details
+            %span.title {{stream.title}}
+            %br
+            %span.play_count {{stream.play_count}}
+    %ul.old_streams
+      %li{ :'ng-repeat' => "stream in oldStreams['#{sport}']" }
+        %a{ :href => "{{stream.url}}", :'ng-click' => "trackPlay()", :target => '_blank', :'ng-style' => "{ 'background-image': 'url(\"{{stream.thumbnail}}\")' }" }
+        %span (-) {{stream.play_count}}
+        %a{ :href => "{{stream.post_url}}" }
+          %p {{stream.title}}
+
+    = render('page_controls', :sport => sport)
